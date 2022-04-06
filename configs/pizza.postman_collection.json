@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "690a6d7b-b08a-4a25-a03d-f2c2baa97166",
+		"name": "pizza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth as a admin (login = 'admin', password = 'secret')",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidWxhbiIsImlhdCI6MTYwMTA4MDY3NywiZXhwIjoxNjAxMDg0Mjc3fQ.scxtZtLuPglqOS1P9h0hVZZyh6q_4gHKZoE4NGGr-sA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"admin\",\r\n    \"password\": \"secret\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test server",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pizza",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjQyNDA5MDM1fQ.OP81Gbs8GJgll-_OzfkriNDSFwyWO6WpuX4RR1lM64g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/keiz/Downloads/SAVE_20210410_114150 (1).jpg"
+						},
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "price",
+							"type": "text"
+						},
+						{
+							"key": "info",
+							"value": "info",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/add/pizza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add",
+						"pizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all pizza",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getall/pizza",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getall",
+						"pizza"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete pizza by id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjQyNDA5MDM1fQ.OP81Gbs8GJgll-_OzfkriNDSFwyWO6WpuX4RR1lM64g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/delete/pizza/1642415196856",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						"pizza",
+						"1642415196856"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add drink",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjQyNDA5MDM1fQ.OP81Gbs8GJgll-_OzfkriNDSFwyWO6WpuX4RR1lM64g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/keiz/Downloads/SAVE_20210410_114150 (1).jpg"
+						},
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "price",
+							"type": "text"
+						},
+						{
+							"key": "info",
+							"value": "info",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/add/drink",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add",
+						"drink"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all drinks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/getall/drink",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getall",
+						"drink"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete drink by id",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImFkbWluIiwiaWF0IjoxNjQyNDA5MDM1fQ.OP81Gbs8GJgll-_OzfkriNDSFwyWO6WpuX4RR1lM64g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/delete/drink/1642415497031",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete",
+						"drink",
+						"1642415497031"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
