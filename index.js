@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import bodyParser from 'body-parser';
 import * as fs from 'fs/promises';
 import path from 'path';
+import cors from 'cors';
 import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -17,6 +18,7 @@ import auth from './middleware/auth.js';
 // SERVER SETUP
 let app = express();
 app.use(bodyParser.json())
+app.use(cors())
 app.use('/public', express.static(__dirname + "/public"));
 
 
