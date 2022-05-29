@@ -6,6 +6,8 @@ import * as fs from 'fs/promises';
 import path from 'path';
 import cors from 'cors';
 import { fileURLToPath } from 'url';
+import twilio from 'twilio';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 
@@ -154,6 +156,25 @@ app.post('/delete/drink/:id', auth, async (req, res) => {
     res.json({msg: "item deleted"})
 })
 
+
+app.get('/sendMessage/:text', async (req, res) => {
+    const client = twilio('ACa6bbcbf28e4f8774925e20a01c740696', '55cefc4b10477156adfebcc17b31630a'); 
+    let text = req.params.text;
+ 
+    try {
+        await client.messages 
+        .create({ 
+            body: text, 
+            from: 'whatsapp:+14155238886', 
+            to: 'whatsapp:+996700231661' 
+        }) 
+    } catch (error) {
+        res.json({msg: `message sent error: ${error}`})
+    }
+   
+
+    res.json({msg: "message have sent"})
+})
 
 
 
