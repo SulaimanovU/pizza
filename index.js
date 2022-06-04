@@ -26,7 +26,7 @@ app.use('/public', express.static(__dirname + "/public"));
 
 // TEST AND LOGIN
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('qDAv4mgwrX7HmlLTMgENBVGTErBCqgK5wmGgVFS0bnk.CFkngcNAGU3cBGr_m-yLitvrZ_0mU5LgE8zUBdA7MNY')
 })
 
 app.post('/admin', (req, res, next) => {
@@ -179,6 +179,6 @@ app.get('/sendMessage/:text', async (req, res) => {
 
 
 // SERVER START
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`App listening at http://localhost:${process.env.PORT || 3000}`)
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`App listening at http://localhost:${process.env.PORT || 5000}`)
 })
